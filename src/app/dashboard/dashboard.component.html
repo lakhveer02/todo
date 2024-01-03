@@ -1,0 +1,31 @@
+<div class="container-fluid bg-light">
+    <div class="container bg-light">
+        <div class="row mt-4" style="height: 500px;">
+            <div class="col"></div>
+            <div class="col-md-6 bg-white shadow">
+                <div class="card bg-dark mt-4 text-center">
+                    <h4 class="text-white ps-3 pt-2 ">To Do List</h4>
+                </div>
+                <div class="shadow">
+                    <div class="input-group p-4">
+                        <input type="text" class="form-control" placeholder="enter task name" name="task" [(ngModel)]="addTaskValue">
+                        <button class="btn btn-outline-success" type="button" (click)="addTask(taskarr)">+</button>
+                    </div>
+                </div>
+                <h4 class="text-primary mt-4">Tasks :</h4>
+                <div style="overflow-y: auto; height: 350px;">
+                    <div class="m-3" *ngFor="let task of taskarr">
+                        <div class="p-2 shadow">
+                            <div class="input-group row ps-3 d-flex flex-nowrap">
+                                <div class="card col-md-10 border-0">{{task.task_name}}</div>
+                                <button class="btn btn-outline-primary col me-2" (click)="editTask(task)">Edit</button>
+                                <button class="btn btn-outline-danger col" (click)="deleteTask(task)">DEL</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</div>
